@@ -17,7 +17,7 @@ public class Player extends GameObjectos{
         posX = (Windows.getLargura() / 2) - (largura / 2);
         int bottom = Windows.getAltura() - 50; // field bottom
         posY = bottom - 30; // place player slightly above bottom line
-        updateBounds();
+
     }
 
     @Override
@@ -45,7 +45,6 @@ public class Player extends GameObjectos{
         if(posX + largura > right){
             posX = right - largura;
         }
-        updateBounds();
     }
 
 }

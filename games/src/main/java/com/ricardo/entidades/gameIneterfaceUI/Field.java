@@ -25,13 +25,4 @@ public class Field {
         g.drawLine(left, bottom, right, bottom);
     }
 
-    public void tick() {
-
-        
-    }
-
-
-
-
-
 }

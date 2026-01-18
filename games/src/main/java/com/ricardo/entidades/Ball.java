@@ -34,7 +34,6 @@ public class Ball extends GameObjectos{
     public void tick() {
         // if paused (after reset), do not update position or collisions
         if(System.currentTimeMillis() < pauseUntil){
-            updateBounds();
             return;
         }
         // update position using angle and speed
@@ -65,8 +64,6 @@ public class Ball extends GameObjectos{
         if(Math.abs(spin) > 0.01){
             angle += spin * 0.002; // tune influence
         } */
-
-        updateBounds();
     }
 
     public void reset(){
@@ -86,7 +83,6 @@ public class Ball extends GameObjectos{
         this.spin = 0;
         // pause movement for 500 ms to avoid instant re-collision issues
         this.pauseUntil = System.currentTimeMillis() + 500;
-        updateBounds();
     }
 
     public int getRaio(){
@@ -164,7 +160,5 @@ public class Ball extends GameObjectos{
         } else {
             this.posY = paddle.getPosY() + paddle.getAltura() + 1;
         }
-
-        updateBounds();
     }
 }

@@ -94,10 +94,7 @@ public class Pong implements Runnable{
                 placarEnemy.somaPonto();
                 AudioPlayer.play("ponto");
                 ball.reset();
-            }
-
-            field.tick();
-            
+            }            
         }
 
 

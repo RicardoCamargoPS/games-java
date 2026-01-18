@@ -16,7 +16,7 @@ public class Enemy extends GameObjectos{
         posX = (Windows.getLargura() / 2) - (largura / 2);
         int top = 60; // field top
         posY = top + 10;
-        updateBounds();
+        
     }
 
     @Override
@@ -53,6 +53,5 @@ public class Enemy extends GameObjectos{
         if(posX + largura > right){
             posX = right - largura;
         }
-        updateBounds();
     }
 }

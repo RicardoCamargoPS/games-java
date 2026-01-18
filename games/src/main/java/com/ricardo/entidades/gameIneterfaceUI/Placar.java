@@ -18,7 +18,7 @@ public class Placar extends GameObjectos {
         this.posY = py;
         this.cor = cor;
         this.nome = nome;
-        updateBounds();
+        
     }
 
     @Override
