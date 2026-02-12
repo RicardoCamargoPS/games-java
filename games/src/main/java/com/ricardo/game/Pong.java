@@ -41,7 +41,7 @@ public class Pong implements Runnable{
         menu = new MenuControle();
         placarPlayer = new Placar("Player ", 20,20, Color.blue);
         placarEnemy = new Placar("Enemy ",20,50, Color.red);
-        // preload common sounds to avoid first-play latency
+        
         AudioPlayer.preload("bola");
         AudioPlayer.preload("ponto");
         
@@ -54,7 +54,7 @@ public class Pong implements Runnable{
         ball = new Ball();
         if(placarPlayer != null) placarPlayer.reset();
         if(placarEnemy != null) placarEnemy.reset();
-        // return to gameplay
+        
         setGameStatus("normal");
         if(menu != null) menu.setMenu(0);
     }

@@ -12,7 +12,7 @@ import javax.sound.sampled.Clip;
 
 public class AudioPlayer {
 
-    // cache raw bytes of wav resources to avoid IO latency on first play
+    
     private static final Map<String, byte[]> cache = new ConcurrentHashMap<>();
 
     public static void preload(String resourceName){
@@ -26,19 +26,18 @@ public class AudioPlayer {
             try (BufferedInputStream bis = new BufferedInputStream(is)){
                 byte[] buf = bis.readAllBytes();
                 cache.put(resourceName, buf);
-                // try to open a Clip once to warm the audio subsystem and
-                // avoid a heavy delay when playing the first sound later
+                
                 try (ByteArrayInputStream bais = new ByteArrayInputStream(buf);
                      AudioInputStream ais = AudioSystem.getAudioInputStream(bais)){
                     Clip clip = AudioSystem.getClip();
                     clip.open(ais);
                     clip.close();
                 } catch (Throwable t) {
-                    // ignore: warming audio may fail on some systems
+                    // ignore:
                 }
             }
         } catch (Exception e) {
-            // ignore preload errors
+            // ignore 
         }
     }
 
@@ -64,7 +63,7 @@ public class AudioPlayer {
                 clip.start();
             }
         } catch (Exception e) {
-            // fail silently
+            
         }
     }
 }
