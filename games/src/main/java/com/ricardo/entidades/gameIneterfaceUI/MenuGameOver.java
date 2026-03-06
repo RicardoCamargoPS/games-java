@@ -11,6 +11,8 @@ public class MenuGameOver extends GameObjectos{
     private String[] opicoes = { "novo", "sair"};
     private int opcao = 0;
     private int maxOption = opicoes.length - 1;
+//jkkk]
+
     private boolean up, down;
 
     @Override
